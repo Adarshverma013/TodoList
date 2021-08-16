@@ -1,0 +1,52 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+      <div class="box box-aqua">
+        <div class="box-header ui-sortable-handle" style="cursor: move">
+          <i class="ion ion-clipboard"></i>
+          <h3 class="box-title">To Do List</h3>
+        </div>
+
+        <div class="box-body" *ngIf="todos?.length != 0">
+          <ul class="todo-list ui-sortable" *ngFor="let todo of todos">
+            <li>
+              <input
+                type="checkbox"
+                value=""
+                name=""
+                [checked]="todo.done"
+                (click)="handleCheckbox(todo.id)"
+              />
+              <span class="text">{{ todo.title }}</span>
+              <br />
+              <span class="text">{{ todo.description }}</span>
+              <div class="tools">
+                <!-- <i class="fa fa-edit"></i> -->
+                <a (click)="deleteTodo(todo.id)"
+                  ><i class="fa fa-trash-o"></i
+                ></a>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div *ngIf="todos?.length == 0" class="col-lg-12 col-md-12 col-xl12">
+          <div class="alert alert-info" role="alert">
+            <h4 class="alert-heading">It's all done</h4>
+            <p>Nothing todo</p>
+          </div>
+        </div>
+        <div class="box-footer clearfix no-border">
+          <button
+            type="button"
+            class="btn btn-default pull-right"
+            (click)="redirectToForm()"
+          >
+            <i class="fa fa-plus"></i> Add item
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3"></div>
+  </div>
+</div>

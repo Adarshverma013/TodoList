@@ -1,0 +1,11 @@
+input {
+  width: auto;
+}
+
+textarea {
+  width: auto;
+}
+form {
+  margin-left: 40px;
+  margin-top: 20px;
+}

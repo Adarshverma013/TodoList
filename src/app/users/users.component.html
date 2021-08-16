@@ -1,0 +1,50 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-6 col-xl-3">
+      <div class="card m-b-30">
+        <div class="card-body row">
+          <div class="col-6">
+            <a routerLink="todos/{{ user?.id }}"
+              ><img
+                src="https://bootdey.com/img/Content/avatar/avatar7.png"
+                alt=""
+                class="img-fluid rounded-circle w-60"
+            /></a>
+          </div>
+          <div class="col-6 card-title align-self-center mb-0">
+            <a 
+              ><h5>{{ user?.userName }}</h5></a
+            >
+          </div>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">
+            <i class="fa fa-envelope float-right"></i>Email :
+            <a href="#">{{ user?.emailId }}</a>
+          </li>
+        </ul>
+        <div class="card-body">
+          <div class="float-right btn-group btn-group-sm">
+            <!-- <a
+              href="#"
+              class="btn btn-primary tooltips"
+              data-placement="top"
+              data-toggle="tooltip"
+              data-original-title="Edit"
+              ><i class="fa fa-pencil"></i>
+            </a> -->
+            <a
+              href="#"
+              (click)="deleteUser(user.id)"
+              class="btn btn-secondary tooltips"
+              data-placement="top"
+              data-toggle="tooltip"
+              data-original-title="Delete"
+              >Delete Account</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
